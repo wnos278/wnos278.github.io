@@ -4,7 +4,7 @@
 title: GudWeb
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+#description: 
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -21,10 +21,14 @@ url: "https://wnos278.github.io"
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-  Author's home: "http://deanattali.com"
+  #Resources:
+    #- Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+    #- Learn markdown: "http://www.markdowntutorial.com/"
+  #Author's home: "http://deanattali.com"
+  Topic:
+    - Security: ""
+    - Machine Learning: ""
+  SonTDC: ""
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -60,18 +64,18 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: SonTDc
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
+  rss: false
   email: "wnos278@gmail.com"
-  facebook: wnos278
+  #facebook: wnos278
   github: wnos278
-  twitter: wnos278
+  #twitter: wnos278
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
