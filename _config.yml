@@ -1,10 +1,14 @@
 # --- General options --- #
 
 # Name of website
-title: GudWeb
+title: sontdc
 
 # Short description of your site
+<<<<<<< HEAD
+description: "imagine about your future"
+=======
 description: ""
+>>>>>>> remotes/origin/master
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
@@ -20,7 +24,6 @@ url: "https://wnos278.github.io"
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
   #Resources:
     #- Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     #- Learn markdown: "http://www.markdowntutorial.com/"
@@ -28,6 +31,7 @@ navbar-links:
   Topic:
     - Security: ""
     - Machine Learning: ""
+    - Learn from Image: ""
   SonTDC: ""
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -72,7 +76,7 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: false
-  email: "wnos278@gmail.com"
+  email: "yui.ai.imagine@gmail.com"
   #facebook: wnos278
   github: wnos278
   #twitter: wnos278
@@ -160,7 +164,7 @@ date_format: "%B %-d, %Y"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "Viet Nam/Ha Noi"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
