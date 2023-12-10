@@ -1,16 +1,26 @@
-{% assign author_name = include.author | replace: " ", "_" | downcase %}
-{% assign show_author_name = include.show_author_name %}
-{% assign author_object = site.data.authors[author_name] %}
-{% assign style = include.style | default: 'inline' %}
-
-{% if author_object %}
-<div class="flex items-center mr-2 -ml-4">
-  {% if author_object.image %}
-    <img width="28" height="28" class="rounded-full border-white border-2" src="{{ author_object.image | relative_url }}" alt="{{ author_object.name }}"/>
-  {% endif %}
-
-  {% if show_author_name %}
-    <span class="font-medium text-sm ml-1">{{ author_object.name}}</span>
-  {% endif %}
+<div class="card">
+    <div class="card-header">
+        About {{author.name}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+                <div class="col-md-4">
+                        {% if author.avatar_url %}
+                        <img class="author-profile-img" src="/assets/img/authors/{{author.avatar_url}}" alt="{{author.name}}" />
+                      {% else %}
+                        <img class="author-profile-img" src="{{site.url}}/assets/img/authors/{{author.avatar}}" alt="{{author.name}}" />
+                      {% endif %}
+                </div>
+                <div class="col-md-6">
+                        <p class="author_bio">{{author.bio}}</p>
+                        <p>Email : {{author.email}}</p>
+                        <p>Website : {{author.site}}</p>
+                        <p class="profile-links">
+                            {% for network in author.social %}
+                                <a class="social-link" href="{{ network.url }}" target="_blank"><i class="fab fa-{{ network.title }} fa-fw"></i></a>
+                            {% endfor %}
+                        </p>
+                </div>
+        </div>
+    </div>
 </div>
-{% endif %}

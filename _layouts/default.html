@@ -1,23 +1,42 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+{%- include head.html -%}
+<body>
+        {%- include header.html -%}
+        <div class="main-container">
+            {{ content }}
+        </div>
+         <div class="col-lg-12" id="newsletter_footer">
+               {%- include blog_newsletter.html -%}
+         </div>
+        {%- include footer.html -%}
+     <script>
+            var options = {
+                classname: 'progressline',
+                id: 'my-id'
+            };
+            var nanobar = new Nanobar( options );
+            nanobar.go( 30 );
+            nanobar.go( 76 );
+            nanobar.go(100);
+        </script>
 
-    {% include meta.html %}
-
-    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
-    <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
-  </head>
-  <body class="page {{page.bodyClass}}">
-    {% include mobile-menu.html %}
-    <div class="container mx-auto px-6 md:px-4">
-      {% include header.html %}
-      {{content}}
-      {% include footer.html %}
-    </div>
-    {% include google-analytics.html %}
-    <script type="text/javascript" src="{{ '/assets/js/hamburger.js' | relative_url }}"></script>
+   <div hidden id="snipcart" data-api-key="Y2I1NTAyNWYtMTNkMy00ODg0LWE4NDItNTZhYzUxNzJkZTI5NjM3MDI4NTUzNzYyMjQ4NzU0"></div>
+   <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.js" defer></script>
+   <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
   </body>
 </html>

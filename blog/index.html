@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "blog"
-heading: "Blog"
+title: Blog
+layout: blog
 ---
-
-{% include heading.html heading=page.heading %}
-
-<main class="py-6">
-  {% for post in paginator.posts %}
-  <div class="mb-12">
-    {% include summary.html post=post %}
-  </div>
-  {% endfor %}
-</main>
-
-{% include paginator.html %}

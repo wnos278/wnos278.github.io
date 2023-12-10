@@ -2,57 +2,41 @@
 layout: default
 ---
 
-{% include heading.html heading=page.title description=page.description align="center" date=page.date %}
-
-{% if page.authors %}
-  <div class="flex flex-col pb-3 md:hidden">
-    {% for author in page.authors %}
-      {% include author-large.html
-        author=author
-      %}
-    {% endfor %}
+<div class="row justify-content-center" id="blog-post-container">
+  <div class="col-lg-10">
+    {%- include blog_post_article.html -%}
+     {%- include blog_post_comments.html-%}
   </div>
-{% endif %}
-
-<img width="1600" height="900" src="{{ page.image }}"/>
-
-<div class="flex flex-col md:flex-row py-6 md:py-12">
-
-  <div class="w-full md:w-3/12 pr-3">
-    {% if page.authors %}
-      <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
-        {% for author in page.authors %}
-          {% include author-large.html
-        author=author
-        %}
-        {% endfor %}
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">About {{site.author}}</div>
+      <div class="card-body">
+        <p class="author_bio">{{ site.author_bio }}</p>
+        {%- include github_star_button.html -%}
       </div>
-    {% endif %}
-
-    {% if page.categories %}
-      <div class="hidden md:block">
-        {% for category in page.categories %}
-          {% include category-badge.html %}
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="w-full md:w-9/12">
-    <div class="prose">
-      {{ content }}
     </div>
   </div>
-
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">Categories</div>
+      <div class="card-body text-dark">
+        {%- include blog_categories.html -%}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">Useful Links</div>
+      <div class="card-body text-dark">
+        {% for i in site.urls %}
+        <li>
+          <a href="{{ site.url}}{{site.baseurl}}{{ i.url }}">{{ i.text }}</a>
+        </li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
-{% if page.categories %}
-  <div class="py-6 mt-6 border-t-2 block md:hidden">
-    <h3 class="text-sm font-medium mb-1">Categories</h3>
-    <div>
-      {% for category in page.categories %}
-        {% include category-badge.html %}
-      {% endfor %}
-    </div>
-  </div>
-{% endif %} 
